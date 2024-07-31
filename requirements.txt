@@ -3,5 +3,3 @@ requests
 huggingface_hub
 pandas
 python-dotenv
-json
-re
