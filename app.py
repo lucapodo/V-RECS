@@ -1,15 +1,5 @@
 import streamlit as st
 st.set_page_config(layout="wide")
-# import chardet
-# from st_aggrid import AgGrid
-
-# import os
-# import pandas as pd
-# import requests
-# import re
-# import altair_viewer
-# import altair as alt
-
 
 from src.data.load import load_data
 from src.style import get_css
@@ -17,7 +7,6 @@ from src.data.transform import extract_response, extract_visualization, build_pr
 from src.huggingfaces.hf import stream
 
 st.markdown(get_css(), unsafe_allow_html=True)
-
 
 if 'stream' not in st.session_state:
     st.session_state.stream = ''
@@ -48,8 +37,10 @@ def main():
 
 
 
-
     user_query = st.chat_input("Say something")
+
+    if not st.session_state.isLoaded and user_query:
+        st.write('[ERROR] Please upload a dataset first!')
 
 
     if st.session_state.isLoaded:
@@ -61,10 +52,10 @@ def main():
 
         if user_query:
 
+            st.session_state.stream = ''
+
             with st.chat_message("user"):
                 st.markdown(user_query)
-
-            st.session_state.stream = ''        
 
             with st.chat_message("assistant"):
                 assistant_placeholder = st.empty()
@@ -73,8 +64,6 @@ def main():
                     st.session_state.stream += token + ''
 
                     col1, col2 = assistant_placeholder.columns([1,1])
-
-                
                     with col1:
                         if(not is_vis):
                             col1 = st.empty()
@@ -82,7 +71,8 @@ def main():
                                 vega_lite_visualization = extract_visualization(st.session_state.stream)
                                 col1.vega_lite_chart(df_data, vega_lite_visualization, use_container_width=True)
                                 is_vis = True
-                            except Exception:
+                            except Exception as e:
+                                print (e)
                                 pass
 
                     with col2:
@@ -93,6 +83,7 @@ def main():
                         except Exception as e:
                             print (e)
                             pass
+
 
 if __name__ == '__main__':
     main()

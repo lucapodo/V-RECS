@@ -1,4 +1,13 @@
 def get_css() -> str:
+    """
+    Return CSS styles for the Streamlit app.
+
+    Returns
+    -------
+    str
+        A string containing CSS styles to be applied to a Streamlit app.
+    """
+    
     return """
         <style>
         .stApp {
