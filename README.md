@@ -1,6 +1,9 @@
-# Streamlit Project Example
+# V-RECS
 
-This project is a simple Streamlit application showcasing basic project structure and organization.
+This repository contains all the supplemental materials and a demo application related to the research paper "V-RECS, a Low-Cost LLM4VIS Recommender with Explanations,
+Captioning and Suggestions" (arXiv:2406.15259). It includes code, data, and resources necessary for replicating the experiments and testing the model locally. The demo application provides a hands-on way to interact with the model, allowing users to test its capabilities in generating controlled text outputs. The repository serves as a comprehensive resource for researchers and developers interested in exploring the implementation and potential applications of the proposed approach.
+
+You can test and access the model here [HuggingFaces Model repo](https://huggingface.co/DeepvizLab/vrecs)
 
 ## Setup
 
@@ -8,7 +11,7 @@ This project is a simple Streamlit application showcasing basic project structur
 ### 1. Clone the Repository
 First, clone the repository to your local machine:
 ```bash
-git clone https://github.com/yourusername/streamlit-project.git
+git clone https://github.com/lucapodo/V-RECS.git
 cd streamlit-project
 ```
 
@@ -49,6 +52,8 @@ Create an `.env` file in the project's root directory to specify the following e
 ```plaintext
 HF_ENDPOINT=your_huggingface_endpoint_here
 ```
+
+You should deploy the model on the HF 🤗 inference endpoint and copy the link to env file variable.
 
 
 ## Project Structure
