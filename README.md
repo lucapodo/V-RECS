@@ -12,7 +12,7 @@ You can test and access the model here [HuggingFaces Model repo](https://hugging
 First, clone the repository to your local machine:
 ```bash
 git clone https://github.com/lucapodo/V-RECS.git
-cd streamlit-project
+cd V-RECS
 ```
 
 ### 2. Create a Virtual Environment
