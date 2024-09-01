@@ -55,6 +55,13 @@ HF_ENDPOINT=your_huggingface_endpoint_here
 
 You should deploy the model on the HF 🤗 inference endpoint and copy the link to env file variable.
 
+### 6. Run Streamlit frontend
+Finally, within the V-RECS folder open a new terminal and run
+```bash
+streamlit run app.py
+```
+This will launch the frontend to test the model
+
 
 ## Project Structure
 
