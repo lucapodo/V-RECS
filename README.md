@@ -3,7 +3,7 @@
 This repository contains all the supplemental materials and a demo application related to the research paper "V-RECS, a Low-Cost LLM4VIS Recommender with Explanations,
 Captioning and Suggestions" (arXiv:2406.15259). It includes code, data, and resources necessary for replicating the experiments and testing the model locally. The demo application provides a hands-on way to interact with the model, allowing users to test its capabilities in generating controlled text outputs. The repository serves as a comprehensive resource for researchers and developers interested in exploring the implementation and potential applications of the proposed approach.
 
-You can test and access the model here [HuggingFaces Model repo](https://huggingface.co/DeepvizLab/vrecs)
+You can test and access the model here [HuggingFaces Model repo](https://huggingface.co/DeepvizLab/vrecs) [NOTE: you have to expose the model as TGI endpoint in HF]
 
 ## Setup
 
